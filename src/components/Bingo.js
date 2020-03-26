@@ -18,6 +18,11 @@ const Bingo = () => {
       e => (e.checked = false)
     )
   }
+
+  const getRandomInt = max => {
+    return Math.floor(Math.random() * Math.floor(max))
+  }
+
   return (
     <>
       <Container>
@@ -49,9 +54,57 @@ const Bingo = () => {
         </BingoTitle>
         <TileContainer>
           <>
-            {_.times(25).map(i => (
+            {_.times(5).map(i => (
               <Tile active={checked} key={i}>
-                <input type="text" maxLength="2" placeholder="-" />
+                <input
+                  type="text"
+                  maxLength="2"
+                  placeholder={getRandomInt(15)}
+                />
+                {/*  this should toggle checked*/}
+                <input type="checkbox" checked={i === 12 ? 1 : 0} />
+              </Tile>
+            ))}
+            {_.times(5).map(i => (
+              <Tile active={checked} key={i}>
+                <input
+                  type="text"
+                  maxLength="2"
+                  placeholder={getRandomInt(30)}
+                />
+                {/*  this should toggle checked*/}
+                <input type="checkbox" checked={i === 12 ? 1 : 0} />
+              </Tile>
+            ))}
+            {_.times(5).map(i => (
+              <Tile active={checked} key={i}>
+                <input
+                  type="text"
+                  maxLength="2"
+                  placeholder={i === 2 ? "--" : getRandomInt(45)}
+                />
+                {/*  this should toggle checked*/}
+                <input type="checkbox" checked={i === 2 ? 1 : 0} />
+              </Tile>
+            ))}
+            {_.times(5).map(i => (
+              <Tile active={checked} key={i}>
+                <input
+                  type="text"
+                  maxLength="2"
+                  placeholder={getRandomInt(60)}
+                />
+                {/*  this should toggle checked*/}
+                <input type="checkbox" />
+              </Tile>
+            ))}
+            {_.times(5).map(i => (
+              <Tile active={checked} key={i}>
+                <input
+                  type="text"
+                  maxLength="2"
+                  placeholder={getRandomInt(75)}
+                />
                 {/*  this should toggle checked*/}
                 <input type="checkbox" />
               </Tile>
