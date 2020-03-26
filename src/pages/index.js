@@ -1,3 +1,10 @@
 import React from "react"
+import Bingo from "../components/Bingo"
+import { GlobalStyles } from "../config/GlobalStyles"
 
-export default () => <div>Hello world!</div>
+export default () => (
+  <>
+    <GlobalStyles />
+    <Bingo />
+  </>
+)
