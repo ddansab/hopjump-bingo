@@ -19,8 +19,8 @@ const Bingo = () => {
     )
   }
 
-  const getRandomInt = max => {
-    return Math.floor(Math.random() * Math.floor(max))
+  const getRandomInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min)
   }
 
   return (
@@ -59,7 +59,7 @@ const Bingo = () => {
                 <input
                   type="text"
                   maxLength="2"
-                  placeholder={getRandomInt(15)}
+                  placeholder={getRandomInt(1, 15)}
                 />
                 {/*  this should toggle checked*/}
                 <input type="checkbox" checked={i === 12 ? 1 : 0} />
@@ -70,7 +70,7 @@ const Bingo = () => {
                 <input
                   type="text"
                   maxLength="2"
-                  placeholder={getRandomInt(30)}
+                  placeholder={getRandomInt(16, 30)}
                 />
                 {/*  this should toggle checked*/}
                 <input type="checkbox" checked={i === 12 ? 1 : 0} />
@@ -80,8 +80,8 @@ const Bingo = () => {
               <Tile active={checked} key={i}>
                 <input
                   type="text"
-                  maxLength="2"
-                  placeholder={i === 2 ? "--" : getRandomInt(45)}
+                  maxLength={i === 2 ? 4 : 2}
+                  placeholder={i === 2 ? "FREE" : getRandomInt(31, 45)}
                 />
                 {/*  this should toggle checked*/}
                 <input type="checkbox" checked={i === 2 ? 1 : 0} />
@@ -92,7 +92,7 @@ const Bingo = () => {
                 <input
                   type="text"
                   maxLength="2"
-                  placeholder={getRandomInt(60)}
+                  placeholder={getRandomInt(46, 60)}
                 />
                 {/*  this should toggle checked*/}
                 <input type="checkbox" />
@@ -103,7 +103,7 @@ const Bingo = () => {
                 <input
                   type="text"
                   maxLength="2"
-                  placeholder={getRandomInt(75)}
+                  placeholder={getRandomInt(61, 75)}
                 />
                 {/*  this should toggle checked*/}
                 <input type="checkbox" />
