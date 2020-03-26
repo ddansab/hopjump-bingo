@@ -62,7 +62,7 @@ const Bingo = () => {
                   placeholder={getRandomInt(1, 15)}
                 />
                 {/*  this should toggle checked*/}
-                <input type="checkbox" checked={i === 12 ? 1 : 0} />
+                <input type="checkbox" />
               </Tile>
             ))}
             {_.times(5).map(i => (
@@ -73,7 +73,7 @@ const Bingo = () => {
                   placeholder={getRandomInt(16, 30)}
                 />
                 {/*  this should toggle checked*/}
-                <input type="checkbox" checked={i === 12 ? 1 : 0} />
+                <input type="checkbox" />
               </Tile>
             ))}
             {_.times(5).map(i => (
@@ -84,7 +84,7 @@ const Bingo = () => {
                   placeholder={i === 2 ? "FREE" : getRandomInt(31, 45)}
                 />
                 {/*  this should toggle checked*/}
-                <input type="checkbox" checked={i === 2 ? 1 : 0} />
+                <input type="checkbox" defaultChecked={i === 2 && true} />
               </Tile>
             ))}
             {_.times(5).map(i => (
