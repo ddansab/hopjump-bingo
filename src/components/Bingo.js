@@ -13,20 +13,24 @@ import {
 const Bingo = () => {
   // toggle this for active styles
   const [checked] = useState(false)
+
   const clearAll = () => {
     Array.from(document.querySelectorAll("input[type='checkbox']")).map(
       e => (e.checked = false)
     )
   }
 
-  const getRandomInt = (min, max) => {
-    const arr = []
-    const rando = Math.floor(Math.random() * (max - min) + min)
-
-    if (!arr.includes(rando)) {
-      arr.push(rando)
-      return rando
-    }
+  const getRandomNum = (min, max) => {
+    let arr = _.range(min, max)
+    let shuffle = _.shuffle(arr)
+    let num = 0
+    shuffle.map(current => {
+      console.log(`current: ${current}`)
+      shuffle = _.tail(shuffle)
+      console.log(`shuffle: ${shuffle}`)
+      num = current
+    })
+    return num
   }
 
   return (
@@ -62,22 +66,14 @@ const Bingo = () => {
           <>
             {_.times(5).map(i => (
               <Tile active={checked} key={i}>
-                <input
-                  type="text"
-                  maxLength="2"
-                  placeholder={getRandomInt(1, 15)}
-                />
+                <input type="text" maxLength="2" value={getRandomNum(1, 15)} />
                 {/*  this should toggle checked*/}
                 <input type="checkbox" />
               </Tile>
             ))}
             {_.times(5).map(i => (
               <Tile active={checked} key={i}>
-                <input
-                  type="text"
-                  maxLength="2"
-                  placeholder={getRandomInt(16, 30)}
-                />
+                <input type="text" maxLength="2" value={getRandomNum(16, 30)} />
                 {/*  this should toggle checked*/}
                 <input type="checkbox" />
               </Tile>
@@ -87,7 +83,7 @@ const Bingo = () => {
                 <input
                   type="text"
                   maxLength={i === 2 ? 4 : 2}
-                  placeholder={i === 2 ? "FREE" : getRandomInt(31, 45)}
+                  value={i === 2 ? "FREE" : getRandomNum(31, 45)}
                 />
                 {/*  this should toggle checked*/}
                 <input type="checkbox" defaultChecked={i === 2 && true} />
@@ -95,22 +91,14 @@ const Bingo = () => {
             ))}
             {_.times(5).map(i => (
               <Tile active={checked} key={i}>
-                <input
-                  type="text"
-                  maxLength="2"
-                  placeholder={getRandomInt(46, 60)}
-                />
+                <input type="text" maxLength="2" value={getRandomNum(46, 60)} />
                 {/*  this should toggle checked*/}
                 <input type="checkbox" />
               </Tile>
             ))}
             {_.times(5).map(i => (
               <Tile active={checked} key={i}>
-                <input
-                  type="text"
-                  maxLength="2"
-                  placeholder={getRandomInt(61, 75)}
-                />
+                <input type="text" maxLength="2" value={getRandomNum(61, 75)} />
                 {/*  this should toggle checked*/}
                 <input type="checkbox" />
               </Tile>
