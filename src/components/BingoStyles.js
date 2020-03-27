@@ -54,6 +54,14 @@ export const Tile = styled.div`
     background-color: ${({ active }) => (active ? "#1779ba" : "#cccccc")};
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   }
+
+  .pointer:hover {
+    cursor: default;
+  }
+
+  .stamper:hover {
+    cursor: crosshair;
+  }
 `
 
 export const TileContainer = styled.div`

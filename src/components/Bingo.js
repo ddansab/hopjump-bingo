@@ -66,41 +66,66 @@ const Bingo = () => {
           <>
             {_.times(5).map(i => (
               <Tile active={checked} key={i}>
-                <input type="text" maxLength="2" value={getRandomNum(1, 15)} />
+                <input
+                  className="pointer"
+                  type="text"
+                  maxLength="2"
+                  value={getRandomNum(1, 15)}
+                />
                 {/*  this should toggle checked*/}
-                <input type="checkbox" />
-              </Tile>
-            ))}
-            {_.times(5).map(i => (
-              <Tile active={checked} key={i}>
-                <input type="text" maxLength="2" value={getRandomNum(16, 30)} />
-                {/*  this should toggle checked*/}
-                <input type="checkbox" />
+                <input className="stamper" type="checkbox" />
               </Tile>
             ))}
             {_.times(5).map(i => (
               <Tile active={checked} key={i}>
                 <input
                   type="text"
+                  className="pointer"
+                  maxLength="2"
+                  value={getRandomNum(16, 30)}
+                />
+                {/*  this should toggle checked*/}
+                <input className="stamper" type="checkbox" />
+              </Tile>
+            ))}
+            {_.times(5).map(i => (
+              <Tile active={checked} key={i}>
+                <input
+                  type="text"
+                  className="pointer"
                   maxLength={i === 2 ? 4 : 2}
                   value={i === 2 ? "FREE" : getRandomNum(31, 45)}
                 />
                 {/*  this should toggle checked*/}
-                <input type="checkbox" defaultChecked={i === 2 && true} />
+                <input
+                  className="stamper"
+                  type="checkbox"
+                  defaultChecked={i === 2 && true}
+                />
               </Tile>
             ))}
             {_.times(5).map(i => (
               <Tile active={checked} key={i}>
-                <input type="text" maxLength="2" value={getRandomNum(46, 60)} />
+                <input
+                  type="text"
+                  className="pointer"
+                  maxLength="2"
+                  value={getRandomNum(46, 60)}
+                />
                 {/*  this should toggle checked*/}
-                <input type="checkbox" />
+                <input className="stamper" type="checkbox" />
               </Tile>
             ))}
             {_.times(5).map(i => (
               <Tile active={checked} key={i}>
-                <input type="text" maxLength="2" value={getRandomNum(61, 75)} />
+                <input
+                  type="text"
+                  className="pointer"
+                  maxLength="2"
+                  value={getRandomNum(61, 75)}
+                />
                 {/*  this should toggle checked*/}
-                <input type="checkbox" />
+                <input className="stamper" type="checkbox" />
               </Tile>
             ))}
           </>
