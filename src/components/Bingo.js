@@ -20,7 +20,13 @@ const Bingo = () => {
   }
 
   const getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min) + min)
+    const arr = []
+    const rando = Math.floor(Math.random() * (max - min) + min)
+
+    if (!arr.includes(rando)) {
+      arr.push(rando)
+      return rando
+    }
   }
 
   return (
