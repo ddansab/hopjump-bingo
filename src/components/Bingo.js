@@ -12,30 +12,21 @@ import {
 
 const Bingo = () => {
   // toggle this for active styles
-  const [checked] = useState(false)
+  const [checked, setChecked] = useState(false)
 
-  const clearAll = () => {
-    Array.from(document.querySelectorAll("input[type='checkbox']")).map(
-      e => (e.checked = false)
-    )
-  }
-
-  const getRandomNum = (min, max) => {
-    let arr = _.range(min, max)
-    let shuffle = _.shuffle(arr)
-    let num = 0
-    shuffle.map(current => {
-      shuffle = _.tail(shuffle)
-      num = current
-    })
-    return num
-  }
+  let bCol = _.sampleSize(_.range(1, 15), 5)
+  let iCol = _.sampleSize(_.range(16, 30), 5)
+  let nCol = _.sampleSize(_.range(31, 45), 5)
+  let gCol = _.sampleSize(_.range(46, 60), 5)
+  let oCol = _.sampleSize(_.range(61, 75), 5)
 
   return (
     <>
       <Container>
         <ClearAll>
-          <button onClick={() => clearAll()}>Clear Card</button>
+          <button onClick={checked => checked ?? setChecked(!checked)}>
+            Clear Card
+          </button>
         </ClearAll>
 
         <BingoTitle>
@@ -61,77 +52,31 @@ const Bingo = () => {
           </h1>
         </BingoTitle>
         <TileContainer>
-          <>
-            {_.times(5).map(i => (
-              <Tile active={checked} key={i}>
-                <input
-                  className="pointer"
-                  type="text"
-                  maxLength="2"
-                  value={getRandomNum(1, 15)}
-                  readOnly
-                />
-                {/*  this should toggle checked*/}
-                <input className="stamper" type="checkbox" />
-              </Tile>
-            ))}
-            {_.times(5).map(i => (
-              <Tile active={checked} key={i}>
-                <input
-                  type="text"
-                  className="pointer"
-                  maxLength="2"
-                  value={getRandomNum(16, 30)}
-                  readOnly
-                />
-                {/*  this should toggle checked*/}
-                <input className="stamper" type="checkbox" />
-              </Tile>
-            ))}
-            {_.times(5).map(i => (
-              <Tile active={checked} key={i}>
-                <input
-                  type="text"
-                  className="pointer"
-                  maxLength={i === 2 ? 4 : 2}
-                  value={i === 2 ? "FREE" : getRandomNum(31, 45)}
-                  readOnly
-                />
-                {/*  this should toggle checked*/}
-                <input
-                  className="stamper"
-                  type="checkbox"
-                  defaultChecked={i === 2 && true}
-                />
-              </Tile>
-            ))}
-            {_.times(5).map(i => (
-              <Tile active={checked} key={i}>
-                <input
-                  type="text"
-                  className="pointer"
-                  maxLength="2"
-                  value={getRandomNum(46, 60)}
-                  readOnly
-                />
-                {/*  this should toggle checked*/}
-                <input className="stamper" type="checkbox" />
-              </Tile>
-            ))}
-            {_.times(5).map(i => (
-              <Tile active={checked} key={i}>
-                <input
-                  type="text"
-                  className="pointer"
-                  maxLength="2"
-                  value={getRandomNum(61, 75)}
-                  readOnly
-                />
-                {/*  this should toggle checked*/}
-                <input className="stamper" type="checkbox" />
-              </Tile>
-            ))}
-          </>
+          {bCol.map(i => (
+            <Tile onClick={() => setChecked(!checked)} active={checked} key={i}>
+              {i}
+            </Tile>
+          ))}
+          {iCol.map(i => (
+            <Tile onClick={() => setChecked(!checked)} active={checked} key={i}>
+              {i}
+            </Tile>
+          ))}
+          {nCol.map(i => (
+            <Tile onClick={() => setChecked(!checked)} active={checked} key={i}>
+              {nCol[2] === 2 ? "FREE" : i}
+            </Tile>
+          ))}
+          {gCol.map(i => (
+            <Tile onClick={() => setChecked(!checked)} active={checked} key={i}>
+              {i}
+            </Tile>
+          ))}
+          {oCol.map(i => (
+            <Tile onClick={() => setChecked(!checked)} active={checked} key={i}>
+              {i}
+            </Tile>
+          ))}
         </TileContainer>
         <ImageContainer>
           <img

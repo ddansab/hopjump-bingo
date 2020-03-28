@@ -30,37 +30,9 @@ export const Tile = styled.div`
   border: 1px solid #ccc;
   transition: all 300ms ease-in-out;
 
-  input[type="checkbox"] {
-    background-color: transparent;
-    width: min-content;
-  }
-
-  input {
-    text-align: center;
-    background-color: transparent;
-    width: 100%;
-    border: 0;
-    height: 100%;
-    color: ${({ active }) => (active ? "white" : "#333333")};
-    font-weight: bold;
-    &:active,
-    &:focus {
-      border: 0;
-      outline: none;
-    }
-  }
-
   &:hover {
     background-color: ${({ active }) => (active ? "#1779ba" : "#cccccc")};
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  }
-
-  .pointer:hover {
-    cursor: default;
-  }
-
-  .stamper:hover {
-    cursor: crosshair;
   }
 `
 
