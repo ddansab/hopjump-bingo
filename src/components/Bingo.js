@@ -25,9 +25,7 @@ const Bingo = () => {
     let shuffle = _.shuffle(arr)
     let num = 0
     shuffle.map(current => {
-      console.log(`current: ${current}`)
       shuffle = _.tail(shuffle)
-      console.log(`shuffle: ${shuffle}`)
       num = current
     })
     return num
@@ -71,6 +69,7 @@ const Bingo = () => {
                   type="text"
                   maxLength="2"
                   value={getRandomNum(1, 15)}
+                  readOnly
                 />
                 {/*  this should toggle checked*/}
                 <input className="stamper" type="checkbox" />
@@ -83,6 +82,7 @@ const Bingo = () => {
                   className="pointer"
                   maxLength="2"
                   value={getRandomNum(16, 30)}
+                  readOnly
                 />
                 {/*  this should toggle checked*/}
                 <input className="stamper" type="checkbox" />
@@ -95,6 +95,7 @@ const Bingo = () => {
                   className="pointer"
                   maxLength={i === 2 ? 4 : 2}
                   value={i === 2 ? "FREE" : getRandomNum(31, 45)}
+                  readOnly
                 />
                 {/*  this should toggle checked*/}
                 <input
@@ -111,6 +112,7 @@ const Bingo = () => {
                   className="pointer"
                   maxLength="2"
                   value={getRandomNum(46, 60)}
+                  readOnly
                 />
                 {/*  this should toggle checked*/}
                 <input className="stamper" type="checkbox" />
@@ -123,6 +125,7 @@ const Bingo = () => {
                   className="pointer"
                   maxLength="2"
                   value={getRandomNum(61, 75)}
+                  readOnly
                 />
                 {/*  this should toggle checked*/}
                 <input className="stamper" type="checkbox" />
