@@ -21,11 +21,21 @@ export const Tile = styled.div`
   color: ${({ active }) => active && "#fff"};
   border: 1px solid #ccc;
   transition: all 300ms ease-in-out;
+  z-index: 1;
 
   &:hover {
-    background-color: ${({ active }) => (active ? "#1779ba" : "#cccccc")};
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    /* background-color: ${({ active }) => (active ? "#1779ba" : "#cccccc")}; */
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.15);
+    transform: scale(1.0075, 1.0075);
     cursor: pointer;
+    z-index: 2;
+    background: #f6f6f6;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: scale(0.995, 0.995);
+    transition: all 1ms ease-in-out;
   }
 
   &:nth-child(13) {
@@ -35,6 +45,7 @@ export const Tile = styled.div`
 
     &:hover {
       box-shadow: none;
+      transform: none;
     }
   }
 
