@@ -13,26 +13,24 @@ import {
 
 const Bingo = () => {
   // toggle this for active styles
-  const [checked, setChecked] = useState(false)
+  const [selected, setSelected] = useState(false)
+
+  const handleSelected = () => {
+    setSelected(!selected)
+  }
 
   return (
     <Container>
       {console.log("Hi")}
       <ClearAll>
-        <button onClick={checked => checked ?? setChecked(!checked)}>
-          Clear Card
-        </button>
+        <button>Clear Card</button>
       </ClearAll>
       <TitleRow />
       <TileContainer>
         {bingoCols.map(column =>
           column.map((val, i) => (
-            <Tile
-              onClick={() => setChecked(!checked)}
-              className={checked && "blue-back"}
-              key={i}
-            >
-              <span>{val}</span>
+            <Tile onClick={() => handleSelected()} active={selected} key={i}>
+              {val}
             </Tile>
           ))
         )}
