@@ -14,11 +14,35 @@ const Bingo = () => {
   // toggle this for active styles
   const [checked, setChecked] = useState(false)
 
-  let bCol = _.sampleSize(_.range(1, 15), 5)
-  let iCol = _.sampleSize(_.range(16, 30), 5)
-  let nCol = _.sampleSize(_.range(31, 45), 5)
-  let gCol = _.sampleSize(_.range(46, 60), 5)
-  let oCol = _.sampleSize(_.range(61, 75), 5)
+  const arr = (min, max) => {
+    let l = []
+    for (let i = min; i < max; ++i) {
+      l.push(i)
+    }
+    return l
+  }
+
+  const shuffleArr = array => {
+    let tmp,
+      current,
+      top = array.length
+
+    if (top)
+      while (--top) {
+        current = Math.floor(Math.random() * (top + 1))
+        tmp = array[current]
+        array[current] = array[top]
+        array[top] = tmp
+      }
+
+    return array.slice(0, 5)
+  }
+
+  let bCol = shuffleArr(arr(1, 15))
+  let iCol = shuffleArr(arr(16, 30))
+  let nCol = shuffleArr(arr(31, 45))
+  let gCol = shuffleArr(arr(46, 60))
+  let oCol = shuffleArr(arr(61, 75))
 
   return (
     <>
@@ -53,7 +77,11 @@ const Bingo = () => {
         </BingoTitle>
         <TileContainer>
           {bCol.map(i => (
-            <Tile onClick={() => setChecked(!checked)} active={checked} key={i}>
+            <Tile
+              onClick={() => setChecked(!checked)}
+              className={checked && "blue-back"}
+              key={i}
+            >
               {i}
             </Tile>
           ))}
@@ -62,9 +90,10 @@ const Bingo = () => {
               {i}
             </Tile>
           ))}
-          {nCol.map(i => (
+          {nCol.map((i, x) => (
             <Tile onClick={() => setChecked(!checked)} active={checked} key={i}>
-              {nCol[2] === 2 ? "FREE" : i}
+              {x === 2 ? "FREE" : i}
+              {console.log(nCol)}
             </Tile>
           ))}
           {gCol.map(i => (

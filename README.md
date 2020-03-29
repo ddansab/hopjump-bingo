@@ -1,7 +1,5 @@
 # Known Issues:
 
-- [ ] Make center square default "FREE", and checked color
-
-- [ ] Currently, when one box gets checked, all boxes get checked
+- [ ] Whole board rerenders on tile click
 
 - [ ] Fix Clear All button

@@ -26,13 +26,28 @@ export const Tile = styled.div`
   flex-direction: column;
   height: 100px;
   width: 160px;
-  background-color: ${({ active }) => (active ? "#21ACE8" : "transparent")};
+  background: ${({ active }) => (active ? "#21ACE8" : "transparent")};
+  color: ${({ active }) => active && "#fff"};
   border: 1px solid #ccc;
   transition: all 300ms ease-in-out;
 
   &:hover {
     background-color: ${({ active }) => (active ? "#1779ba" : "#cccccc")};
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  &:nth-child(13) {
+    background: #21ace8;
+    color: #fff;
+    content: "FREE" !important;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  .blue-back {
+    background: #21ace8;
   }
 `
 
