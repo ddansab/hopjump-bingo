@@ -10,15 +10,6 @@ export const Container = styled.div`
   border-radius: 4px;
 `
 
-export const BingoTitle = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid #cccccc;
-`
-
 export const Tile = styled.div`
   display: flex;
   align-items: center;
@@ -34,6 +25,7 @@ export const Tile = styled.div`
   &:hover {
     background-color: ${({ active }) => (active ? "#1779ba" : "#cccccc")};
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    cursor: pointer;
   }
 
   &:nth-child(13) {
