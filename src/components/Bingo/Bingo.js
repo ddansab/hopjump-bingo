@@ -13,24 +13,32 @@ import {
 
 const Bingo = () => {
   // toggle this for active styles
-  const [selected, setSelected] = useState(false)
+  // toggle this for active styles
+  const [checked] = useState(false)
 
-  const handleSelected = () => {
-    setSelected(!selected)
+  const clearAll = () => {
+    Array.from(document.querySelectorAll("input[type='checkbox']")).map(
+      e => (e.checked = false)
+    )
   }
 
   return (
     <Container>
-      {console.log("Hi")}
       <ClearAll>
-        <button>Clear Card</button>
+        <button onClick={() => clearAll()}>Clear Card</button>
       </ClearAll>
       <TitleRow />
       <TileContainer>
         {bingoCols.map(column =>
           column.map((val, i) => (
-            <Tile onClick={() => handleSelected()} active={selected} key={i}>
-              {val}
+            <Tile active={checked} key={i}>
+              <input className="pointer" type="text" value={val} readOnly />
+              {/*  this should toggle checked*/}
+              <input
+                className="stamper"
+                type="checkbox"
+                defaultChecked={val === "FREE" && true}
+              />
             </Tile>
           ))
         )}

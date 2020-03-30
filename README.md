@@ -1,5 +1,1 @@
-# Known Issues:
-
-- [ ] Whole board rerenders on tile click
-
-- [ ] Fix Clear All button
+Find board at: [hopjumpbingo.com](http://www.hopjumpbingo.com)

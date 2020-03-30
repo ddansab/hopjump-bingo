@@ -1,29 +1,24 @@
 import React from "react"
 
-import { BingoTitle } from "./TitleRowStyles"
+import { BingoTitle, LetterBox } from "./TitleRowStyles"
 
 const TitleRow = () => (
   <BingoTitle>
-    <h1>
-      {" "}
-      B <span>1-15</span>
-    </h1>
-    <h1>
-      {" "}
-      I <span>16-30</span>
-    </h1>
-    <h1>
-      {" "}
-      N <span>31-45</span>
-    </h1>
-    <h1>
-      {" "}
-      G <span>46-60</span>
-    </h1>
-    <h1>
-      {" "}
-      O <span>61-75</span>
-    </h1>
+    <LetterBox>
+      <h1>B</h1>
+    </LetterBox>
+    <LetterBox>
+      <h1>I</h1>
+    </LetterBox>
+    <LetterBox>
+      <h1>N</h1>
+    </LetterBox>
+    <LetterBox>
+      <h1 className="brand-blue">G</h1>
+    </LetterBox>
+    <LetterBox>
+      <h1 className="brand-blue">O</h1>
+    </LetterBox>
   </BingoTitle>
 )
 

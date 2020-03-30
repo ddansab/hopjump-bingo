@@ -8,3 +8,18 @@ export const BingoTitle = styled.div`
   text-align: center;
   border-bottom: 1px solid #cccccc;
 `
+export const LetterBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+
+  h1 {
+    font-weight: 100;
+  }
+
+  .brand-blue {
+    color: #21ace8;
+    font-weight: 800;
+  }
+`

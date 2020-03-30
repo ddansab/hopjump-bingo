@@ -10,6 +10,13 @@ export const Container = styled.div`
   border-radius: 4px;
 `
 
+export const TileContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 500px;
+`
+
 export const Tile = styled.div`
   display: flex;
   align-items: center;
@@ -23,44 +30,38 @@ export const Tile = styled.div`
   transition: all 300ms ease-in-out;
   z-index: 1;
 
-  &:hover {
-    box-shadow: ${({ active }) =>
-      !active &&
-      "0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)"};
-    transform: ${({ active }) => !active && "scale(1.0075, 1.0075)"};
-    cursor: pointer;
-    z-index: 2;
-    background-color: ${({ active }) => (active ? "#1779ba" : "#cccccc")};
+  input[type="checkbox"] {
+    background-color: transparent;
+    width: min-content;
   }
 
-  &:active {
-    box-shadow: none;
-    transform: scale(0.995, 0.995);
-    transition: all 1ms ease-in-out;
-  }
-
-  &:nth-child(13) {
-    background: #21ace8;
-    color: #fff;
-    content: "FREE" !important;
-
-    &:hover {
-      box-shadow: none;
-      transform: none;
-      cursor: default;
+  input {
+    text-align: center;
+    background-color: transparent;
+    width: 100%;
+    border: 0;
+    height: 100%;
+    color: ${({ active }) => (active ? "white" : "#333333")};
+    font-weight: bold;
+    &:active,
+    &:focus {
+      border: 0;
+      outline: none;
     }
   }
 
-  .blue-back {
-    background: #21ace8;
+  .pointer:hover {
+    cursor: default;
   }
-`
 
-export const TileContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 500px;
+  .stamper:hover {
+    cursor: crosshair;
+  }
+
+  &:hover {
+    background: ${({ active }) => (active ? "#1779ba" : "#cccccc")};
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
 `
 
 export const ImageContainer = styled.div`
@@ -80,10 +81,15 @@ export const ClearAll = styled.div`
   justify-content: center;
   text-align: center;
   padding: 18px 0;
+
   button {
     text-decoration: none;
     color: #1779ba;
     background-color: transparent;
     border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `
