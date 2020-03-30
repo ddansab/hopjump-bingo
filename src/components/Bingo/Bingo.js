@@ -4,6 +4,8 @@ import TitleRow from "../TitleRow"
 import { bingoCols } from "../../bingoCols"
 
 import {
+  MobileShow,
+  BingoWrapper,
   Container,
   ClearAll,
   TileContainer,
@@ -23,33 +25,45 @@ const Bingo = () => {
   }
 
   return (
-    <Container>
-      <ClearAll>
-        <button onClick={() => clearAll()}>Clear Card</button>
-      </ClearAll>
-      <TitleRow />
-      <TileContainer>
-        {bingoCols.map(column =>
-          column.map((val, i) => (
-            <Tile active={checked} key={i}>
-              <input className="pointer" type="text" value={val} readOnly />
-              {/*  this should toggle checked*/}
-              <input
-                className="stamper"
-                type="checkbox"
-                defaultChecked={val === "FREE" && true}
-              />
-            </Tile>
-          ))
-        )}
-      </TileContainer>
-      <ImageContainer>
+    <>
+      <MobileShow>
+        <h1>Sorry...</h1>
         <img
-          src="https://res.cloudinary.com/hopjump/image/upload/v1522091026/logotype_xpzypt.png"
-          alt="kickass bingo background, y'all"
+          src="./must-be-at-least2.png"
+          alt="Must be thiiis tall to ride this ride"
         />
-      </ImageContainer>
-    </Container>
+        <p>Must be at least a tablet size to ride this ride.</p>
+      </MobileShow>
+      <BingoWrapper>
+        <Container>
+          <ClearAll>
+            <button onClick={() => clearAll()}>Clear Card</button>
+          </ClearAll>
+          <TitleRow />
+          <TileContainer>
+            {bingoCols.map(column =>
+              column.map((val, i) => (
+                <Tile active={checked} key={i}>
+                  <input className="pointer" type="text" value={val} readOnly />
+                  {/*  this should toggle checked*/}
+                  <input
+                    className="stamper"
+                    type="checkbox"
+                    defaultChecked={val === "FREE" && true}
+                  />
+                </Tile>
+              ))
+            )}
+          </TileContainer>
+          <ImageContainer>
+            <img
+              src="https://res.cloudinary.com/hopjump/image/upload/v1522091026/logotype_xpzypt.png"
+              alt="kickass bingo background, y'all"
+            />
+          </ImageContainer>
+        </Container>
+      </BingoWrapper>
+    </>
   )
 }
 

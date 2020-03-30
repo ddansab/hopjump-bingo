@@ -7,11 +7,14 @@ export const GlobalStyles = createGlobalStyle`
     font-family: "quicksand", "helvetica", san-serif;
   }
 
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
   h1 {
-    color: #21ace8;
-    &:nth-child(-n + 3) {
       color: #0c3759;
-    }
+
     span {
       font-size: 12px;
       display: block;
@@ -21,9 +24,11 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: url("https://images.unsplash.com/photo-1544473243-e8b609021dbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80");
-    background-size: cover;
-    background-position: center center;
     height: 100%;
+    min-height: 100vh;
+  }
+
+  img {
+    max-width: 100%;
   }
 `

@@ -1,9 +1,41 @@
 import styled from "styled-components"
 
+export const MobileShow = styled.div`
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: #ccc;
+  flex-direction: column;
+  padding: 16px;
+  text-align: center;
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+  }
+`
+export const BingoWrapper = styled.div`
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://images.unsplash.com/photo-1544473243-e8b609021dbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+`
 export const Container = styled.div`
   display: flex;
   width: 800px;
-  margin: 50px auto;
+  margin: 0 auto;
   background-color: #f6f6f6;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   flex-direction: column;
