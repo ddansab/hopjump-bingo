@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react"
+import React, { useState } from "react"
 
 import TitleRow from "../TitleRow"
 import { bingoCols } from "../../bingoCols"
@@ -16,7 +16,7 @@ import {
 
 const Bingo = () => {
   // toggle this for active styles
-  const [checked, setChecked] = useState(false)
+  const [checked] = useState(false)
   const clearAll = () => {
     Array.from(document.querySelectorAll("input[type='checkbox']")).map(
       e => (e.checked = false)
@@ -38,7 +38,7 @@ const Bingo = () => {
           <ImageContainer>
             <img
               src="https://res.cloudinary.com/hopjump/image/upload/v1522091026/logotype_xpzypt.png"
-              alt="kickass bingo background, y'all"
+              alt="hopjump logo"
             />
           </ImageContainer>
           <TitleRow />

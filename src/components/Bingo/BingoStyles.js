@@ -23,7 +23,13 @@ export const BingoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("https://images.unsplash.com/photo-1544473243-e8b609021dbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80");
+  background: linear-gradient(
+      45deg,
+      rgba(12, 55, 89, 0.25) 0%,
+      rgba(23, 121, 186, 0.25) 35%,
+      rgba(33, 172, 232, 0.1) 100%
+    ),
+    url("./washington-dc-blossoms.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -150,10 +156,6 @@ export const ClearAll = styled.div`
     transition: all 300ms ease;
     padding: 4px 12px;
     border-radius: 4px;
-    margin-right: 16px;
-    &:last-of-type {
-      margin: 0;
-    }
 
     &:hover {
       cursor: pointer;
