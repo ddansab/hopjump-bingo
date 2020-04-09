@@ -6,7 +6,7 @@ export const BingoTitle = styled.div`
   align-items: center;
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid #cccccc;
+  background: #0c3759;
 `
 export const LetterBox = styled.div`
   display: flex;

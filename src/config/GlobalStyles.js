@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   h1 {
-      color: #0c3759;
+      color: #fff;
 
     span {
       font-size: 12px;

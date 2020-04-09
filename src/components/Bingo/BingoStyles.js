@@ -49,51 +49,76 @@ export const TileContainer = styled.div`
   height: 500px;
 `
 
-export const Tile = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+export const Tile = styled.label`
+  position: relative;
   height: 100px;
   width: 160px;
   background: ${({ active }) => (active ? "#21ACE8" : "transparent")};
-  color: ${({ active }) => active && "#fff"};
   border: 1px solid #ccc;
   transition: all 300ms ease-in-out;
   z-index: 1;
-
-  input[type="checkbox"] {
-    background-color: transparent;
-    width: min-content;
-  }
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
 
   input {
-    text-align: center;
-    background-color: transparent;
-    width: 100%;
-    border: 0;
-    height: 100%;
-    color: ${({ active }) => (active ? "white" : "#333333")};
-    font-weight: bold;
-    &:active,
-    &:focus {
-      border: 0;
-      outline: none;
-    }
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
   }
 
-  .pointer:hover {
-    cursor: default;
+  .numbers {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .stamper:hover {
-    cursor: crosshair;
+  .checkmark {
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  &:hover {
-    background: ${({ active }) => (active ? "#1779ba" : "#cccccc")};
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  &:hover input ~ .checkmark {
+    background-color: #ccc;
   }
+
+  input:checked ~ .checkmark {
+    background-color: #21ace8;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 2;
+  }
+`
+
+export const CheckBox = styled.input`
+  width: 30px !important;
 `
 
 export const ImageContainer = styled.div`
@@ -113,15 +138,23 @@ export const ClearAll = styled.div`
   justify-content: center;
   text-align: center;
   padding: 18px 0;
+  background: #fff;
 
   button {
     text-decoration: none;
-    color: #1779ba;
-    background-color: transparent;
-    border: none;
+    color: #fff;
+    font-weight: 600;
+    border: 2px solid #21ace8;
+    background-color: #21ace8;
+    transition: all 300ms ease;
+    padding: 4px 12px;
+    border-radius: 4px;
 
     &:hover {
       cursor: pointer;
+      color: #fff;
+      border: 2px solid #1779ba;
+      background-color: #1779ba;
     }
   }
 `

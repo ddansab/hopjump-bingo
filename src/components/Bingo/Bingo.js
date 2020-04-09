@@ -11,13 +11,14 @@ import {
   TileContainer,
   Tile,
   ImageContainer,
+  CheckBox,
 } from "./BingoStyles"
 
 const Bingo = () => {
   // toggle this for active styles
   // toggle this for active styles
   const [checked] = useState(false)
-
+  console.log(checked)
   const clearAll = () => {
     Array.from(document.querySelectorAll("input[type='checkbox']")).map(
       e => (e.checked = false)
@@ -44,13 +45,13 @@ const Bingo = () => {
             {bingoCols.map(column =>
               column.map((val, i) => (
                 <Tile active={checked} key={i}>
-                  <input className="pointer" type="text" value={val} readOnly />
-                  {/*  this should toggle checked*/}
-                  <input
+                  <span className="numbers">{val}</span>
+                  <CheckBox
                     className="stamper"
                     type="checkbox"
                     defaultChecked={val === "FREE" && true}
                   />
+                  <span className="checkmark" />
                 </Tile>
               ))
             )}
