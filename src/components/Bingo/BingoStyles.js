@@ -83,6 +83,7 @@ export const Tile = styled.label`
     top: 55px;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 4px;
   }
 
   &:hover input ~ .checkmark {
