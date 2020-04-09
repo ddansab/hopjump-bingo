@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useCallback } from "react"
 
 import TitleRow from "../TitleRow"
 import { bingoCols } from "../../bingoCols"
@@ -16,9 +16,7 @@ import {
 
 const Bingo = () => {
   // toggle this for active styles
-  // toggle this for active styles
-  const [checked] = useState(false)
-  console.log(checked)
+  const [checked, setChecked] = useState(false)
   const clearAll = () => {
     Array.from(document.querySelectorAll("input[type='checkbox']")).map(
       e => (e.checked = false)
@@ -37,9 +35,12 @@ const Bingo = () => {
       </MobileShow>
       <BingoWrapper>
         <Container>
-          <ClearAll>
-            <button onClick={() => clearAll()}>Clear Card</button>
-          </ClearAll>
+          <ImageContainer>
+            <img
+              src="https://res.cloudinary.com/hopjump/image/upload/v1522091026/logotype_xpzypt.png"
+              alt="kickass bingo background, y'all"
+            />
+          </ImageContainer>
           <TitleRow />
           <TileContainer>
             {bingoCols.map(column =>
@@ -56,12 +57,9 @@ const Bingo = () => {
               ))
             )}
           </TileContainer>
-          <ImageContainer>
-            <img
-              src="https://res.cloudinary.com/hopjump/image/upload/v1522091026/logotype_xpzypt.png"
-              alt="kickass bingo background, y'all"
-            />
-          </ImageContainer>
+          <ClearAll>
+            <button onClick={() => clearAll()}>Clear Card</button>
+          </ClearAll>
         </Container>
       </BingoWrapper>
     </>

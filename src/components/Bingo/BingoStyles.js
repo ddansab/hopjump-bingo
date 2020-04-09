@@ -138,7 +138,7 @@ export const ClearAll = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 18px 0;
+  padding: 24px 0;
   background: #fff;
 
   button {
@@ -150,6 +150,10 @@ export const ClearAll = styled.div`
     transition: all 300ms ease;
     padding: 4px 12px;
     border-radius: 4px;
+    margin-right: 16px;
+    &:last-of-type {
+      margin: 0;
+    }
 
     &:hover {
       cursor: pointer;
