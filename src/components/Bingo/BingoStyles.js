@@ -26,10 +26,10 @@ export const BingoWrapper = styled.div`
   background: linear-gradient(
       45deg,
       rgba(12, 55, 89, 0.25) 0%,
-      rgba(23, 121, 186, 0.1) 35%,
-      rgba(33, 172, 232, 0.15) 100%
+      rgba(23, 121, 186, 0.15) 35%,
+      rgba(33, 172, 232, 0.25) 100%
     ),
-    url("./fenway.jpg");
+    url("./machu-pichu.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
