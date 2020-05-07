@@ -29,10 +29,10 @@ export const BingoWrapper = styled.div`
       rgba(23, 121, 186, 0.15) 35%,
       rgba(33, 172, 232, 0.25) 100%
     ),
-    url("./machu-pichu.jpg");
+    url("./iceland1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
 
   @media screen and (max-width: 767px) {
     display: none;
