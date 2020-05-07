@@ -25,14 +25,14 @@ export const BingoWrapper = styled.div`
   justify-content: center;
   background: linear-gradient(
       45deg,
-      rgba(12, 55, 89, 0.25) 0%,
-      rgba(23, 121, 186, 0.15) 35%,
-      rgba(33, 172, 232, 0.25) 100%
+      rgba(12, 55, 89, 0.1) 0%,
+      rgba(23, 121, 186, 0.1) 35%,
+      rgba(33, 172, 232, 0.1) 100%
     ),
-    url("./iceland1.jpg");
+    url("./mexico_santiago_de_queretaro_inv.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center 0;
 
   @media screen and (max-width: 767px) {
     display: none;
