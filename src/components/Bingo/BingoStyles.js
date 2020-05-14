@@ -29,7 +29,7 @@ export const BingoWrapper = styled.div`
       rgba(23, 121, 186, 0.1) 35%,
       rgba(33, 172, 232, 0.1) 100%
     ),
-    url("./mexico_santiago_de_queretaro_inv.jpg");
+    url("./thailand-inv.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 0;
