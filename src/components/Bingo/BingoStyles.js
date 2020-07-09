@@ -29,7 +29,7 @@ export const BingoWrapper = styled.div`
       rgba(23, 121, 186, 0.1) 35%,
       rgba(33, 172, 232, 0.1) 100%
     ),
-    url("./thailand-inv.jpg");
+    url("./mars.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 0;
